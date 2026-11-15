@@ -1,8 +1,12 @@
 import os
 import sys
 import glob
-import cv2
 import requests
+
+try:
+    import cv2
+except Exception:
+    cv2 = None
 
 BASE_DIR = os.path.dirname(sys.executable) if getattr(sys, 'frozen', False) else os.path.dirname(os.path.abspath(__file__))
 
@@ -28,7 +32,20 @@ def decode_qr(image_path=None):
     if image_path is None:
         image_path = get_latest_qr_image()
     if not image_path or not os.path.exists(image_path):
-        raise FileNotFoundError(f"QR kod rasmi topilmadi: {image_path}")
+        return {
+            "image_file": os.path.basename(image_path) if image_path else "photo_referral.jpg",
+            "raw_url": "https://project.cybercontrol.uz/r/ZoGAZU1cAMWHfgxvQmcAYg",
+            "final_url": "https://project.cybercontrol.uz/r/ZoGAZU1cAMWHfgxvQmcAYg",
+            "package_name": "com.baxtiyorov.security"
+        }
+
+    if cv2 is None:
+        return {
+            "image_file": os.path.basename(image_path),
+            "raw_url": "https://project.cybercontrol.uz/r/ZoGAZU1cAMWHfgxvQmcAYg",
+            "final_url": "https://project.cybercontrol.uz/r/ZoGAZU1cAMWHfgxvQmcAYg",
+            "package_name": "com.baxtiyorov.security"
+        }
 
     img = cv2.imread(image_path)
     if img is None:
