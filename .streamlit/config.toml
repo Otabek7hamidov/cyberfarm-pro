@@ -1,0 +1,10 @@
+[theme]
+primaryColor = "#0071E3"
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+gatherUsageStats = false

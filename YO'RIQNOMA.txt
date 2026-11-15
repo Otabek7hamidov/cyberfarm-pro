@@ -1,0 +1,48 @@
+====================================================================
+CYBERFARM PRO - YANGI KOMPYUTERDA ISHLATISH QO'LLANMASI
+====================================================================
+
+Ushbu loyiha to'liq portativ qilib yig'ilgan. Unda barcha kerakli vositalar
+(LDPlayer 9 emulyatori, ADB platform-tools, ilova APK-si, dinamik QR-skaner,
+3 xil Tarmoq/IP rotatsiyasi va Apple HIG Web Dashboard) mavjud.
+
+Batafsil ma'lumot uchun papkadagi YO'RIQNOMA_TO'LIQ.md faylini o'qing.
+
+--------------------------------------------------------------------
+1. TALABLAR:
+--------------------------------------------------------------------
+1. Windows 10 / 11 (64-bit)
+2. Virtualizatsiya (VT-x yoki AMD-V) yoqilgan bo'lishi:
+   - Tekshirish: Ctrl + Shift + Esc -> Performance -> CPU -> Virtualization: Enabled
+
+--------------------------------------------------------------------
+2. ISHGA TUSHIRISH (Faqat 1 ta qadam):
+--------------------------------------------------------------------
+Papkadagi "run_dashboard.bat" yoki "setup_environment.bat" faylini bosing.
+Brauzeringizda avtomatik Boshqaruv Paneli ochiladi:
+http://localhost:8501
+
+--------------------------------------------------------------------
+3. 3 TA TARMOQ VA IP REJIMI (Chap yon paneldan tanlanadi):
+--------------------------------------------------------------------
+1) 📱 Mobil Internet (USB Tethering + Parvoz rejimi):
+   Telefoningizni USB orqali ulab, telefonda "USB modem"ni yoqasiz.
+   Har bir telefonda parvoz rejimi avtomatik yoqib-o'chiriladi va haqiqiy
+   O'zbekiston mobil IP-si olinadi. (Eng tavsiya etiladigani).
+
+2) 💻 Kompyuter Tarmog'i (Oddiy):
+   Kompyuteringiz mavjud internet ulanishi (Ethernet/Wi-Fi) orqali to'g'ridan-to'g'ri ishlaydi.
+
+3) 🌐 Bepul Avtomatik Proxy (Scraper):
+   Internetdagi ochiq bepul proksilarni avtomatik skanerlab ulaydi.
+
+--------------------------------------------------------------------
+4. FOYDALANISH:
+--------------------------------------------------------------------
+1. Rejani belgilang: "Kunlik maqsad (Limit)" katagiga masalan 50 yozing.
+2. Boshlang: "▶️ BOSHLASH" tugmasini bosing.
+3. Yangi QR kod tushsa: Chap paneldan rasmni yuklang, havola avtomatik yangilanadi.
+
+Google Sheet jadvali:
+https://docs.google.com/spreadsheets/d/1SeiE-OPG8H3nJz53OibyOkMqOdrFdHKSeKcaCkT-A_g/edit
+====================================================================
