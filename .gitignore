@@ -3,6 +3,7 @@ authorized_user.json
 client_secret.json
 service_account.json
 node_config.json
+streamlit_secrets_template.toml
 
 # Large Portable Binaries & Emulators (Katta hajmli fayllar)
 LDPlayer9/

@@ -46,11 +46,17 @@ class SheetsManager:
         # 0. Try Streamlit Secrets (for 24/7 Streamlit Community Cloud deployment)
         try:
             import streamlit as st
-            if hasattr(st, "secrets") and "gcp_service_account" in st.secrets:
-                from google.oauth2.service_account import Credentials as ServiceCredentials
-                sa_info = dict(st.secrets["gcp_service_account"])
-                creds = ServiceCredentials.from_service_account_info(sa_info, scopes=SCOPES)
-                return creds
+            if hasattr(st, "secrets"):
+                if "gcp_service_account" in st.secrets:
+                    from google.oauth2.service_account import Credentials as ServiceCredentials
+                    sa_info = dict(st.secrets["gcp_service_account"])
+                    creds = ServiceCredentials.from_service_account_info(sa_info, scopes=SCOPES)
+                    return creds
+                elif "authorized_user" in st.secrets:
+                    from google.oauth2.credentials import Credentials as OAuthCredentials
+                    auth_info = dict(st.secrets["authorized_user"])
+                    creds = OAuthCredentials.from_authorized_user_info(auth_info, SCOPES)
+                    return creds
         except Exception:
             pass
 
